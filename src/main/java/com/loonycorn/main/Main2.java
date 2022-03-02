@@ -5,13 +5,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-
-//Running aop and working with Pointcut Expression
-public class Main1 {
+//Setting up Aspect Configurations using Annotations
+public class Main2 {
 
     public static void main(String[] args)
     {
-        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext2.xml");
 
         Item item=(Item) applicationContext.getBean("itemBeanOne");
        // item.printItemDetails();

@@ -9,22 +9,34 @@
 
 
 
-    <bean id="myPointcutAspect" class="com.loonycorn.config.AspectConfig"/>
+   <aop:aspectj-autoproxy/>
 
-    <aop:config>
-        <aop:aspect id="myAdvice" ref="myPointcutAspect">
-            <aop:pointcut id="myPointExpression" expression="execution(* com.loonycorn.pointcuts.Item.*(..))"/>
-
-            <aop:before pointcut-ref="myPointExpression" method="printLogo"/>
-        </aop:aspect>
-    </aop:config>
+    <bean id="myPointcutAspect" class="com.loonycorn.config.AspectConfig3"/>
 
     <bean id="itemBeanOne" class="com.loonycorn.pointcuts.Item">
 
-        <property name="itemId" value="102"/>
+        <property name="itemId" value="101"/>
         <property name="itemName" value="Bread"/>
         <property name="itemPrice" value="8.25"/>
         <property name="availableQuantity" value="10"/>
+    </bean>
+
+    <bean id="itemBeanTwo" class="com.loonycorn.pointcuts.Item">
+
+        <property name="itemId" value="102"/>
+        <property name="itemName" value="Milk"/>
+        <property name="itemPrice" value="15"/>
+        <property name="availableQuantity" value="8"/>
+    </bean>
+
+
+    <bean id="listBean" class="com.loonycorn.pointcuts.ItemList">
+        <property name="items">
+            <list>
+                <ref bean="itemBeanOne"/>
+                <ref bean="itemBeanTwo"/>
+            </list>
+        </property>
     </bean>
 
 
