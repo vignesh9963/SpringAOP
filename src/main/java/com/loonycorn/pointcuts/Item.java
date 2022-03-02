@@ -51,7 +51,7 @@ public class    Item {
                 ", availableQuantity=" + availableQuantity +
                 '}';
     }
-
+    @DetailPublisher
     public void printItemDetails()
     {
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("MMM dd yyyy - HH:mm:ss");
